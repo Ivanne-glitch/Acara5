@@ -9,7 +9,7 @@
     :root {
       /* URL GAMBAR SAWAH DARI DRONE (UNSPLASH) */
       --bg-url: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.1.0&auto=format&fit=crop&w=3000&q=80');
-      --bg-blur: 3px; /* Sedikit ditambah agar teks lebih mudah dibaca */
+      --bg-blur: 3px;
       --bg-overlay: 0.45;
     }
     body {
@@ -45,7 +45,7 @@
       margin-bottom: 18px;
     }
     h1 {
-      margin: 25px;
+      margin: 25px 25px 10px 25px; /* Margin bawah dikurangi untuk memberi ruang teks tambahan */
       line-height: 1.2;
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -53,6 +53,27 @@
       font-weight: bold;
     }
     
+    /* CSS UNTUK TEKS KOP SURAT DI BAWAH JUDUL */
+    .kop-surat {
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin: 0 auto 20px auto;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.3); /* Latar transparan agar teks lebih terbaca */
+      padding: 10px 20px;
+      border-radius: 8px;
+      backdrop-filter: blur(2px);
+      display: inline-block;
+    }
+    .kop-surat p {
+      margin: 2px 0;
+    }
+    .kop-surat strong {
+      color: #f1c40f; /* Warna kuning emas untuk label */
+    }
+
     /* UKURAN LOGO */
     .logo {
       position: absolute;
@@ -153,7 +174,8 @@
     }
     @media(max-width: 768px) {
       body { padding: 10px; }
-      h1 { font-size: 1.8em; margin: 15px 5px; }
+      h1 { font-size: 1.8em; margin: 15px 5px 10px 5px; }
+      .kop-surat { font-size: 0.85em; padding: 10px; margin-bottom: 15px; }
       .logo { width: 80px; left: 10px; top: 2%; }
       .controls { gap: 5px; margin: 8px 0; }
       .controls input[type="search"]{ width: 100%; max-width: none; margin-bottom: 8px; padding: 8px; font-size: 16px; }
@@ -176,8 +198,18 @@
 <div class="bg" aria-hidden="true"></div>
 
 <header>
-  <img class="logo" src="https://iconlogovector.com/uploads/images/2023/05/md-fbb5773f932917dd07ac020dba4daad359.jpg" alt="Logo Karanganyar" />
+  <!-- URL LOGO DIGANTI DENGAN PNG TRANSPARAN RESMI DARI WIKIMEDIA -->
+  <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Coat_of_arms_of_Karanganyar_Regency.png/512px-Coat_of_arms_of_Karanganyar_Regency.png" alt="Logo Karanganyar" />
+  
   <h1>JUMLAH PENDUDUK KABUPATEN KARANGANYAR TAHUN 2024</h1>
+  
+  <!-- TAMBAHAN: INFORMASI KOP SURAT DI BAWAH JUDUL -->
+  <div class="kop-surat">
+    <p><strong>Pemerintah Kabupaten Karanganyar</strong></p>
+    <p>Jl. Lawu No. 385-B, Karanganyar, Jawa Tengah 57712</p>
+    <p>Telepon: (0271) 495039 | Faksimile: (0271) 495590</p>
+    <p>Website: www.karanganyarkab.go.id | Email: bupati@karanganyarkab.go.id</p>
+  </div>
 </header>
 
 <div class="controls">
